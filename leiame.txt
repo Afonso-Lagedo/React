@@ -1,0 +1,3 @@
+Primeira vez no terminal, com node instalado no computador:
+
+npx create-react-app nomeProjeto
