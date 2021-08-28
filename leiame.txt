@@ -1,3 +1,11 @@
-Primeira vez no terminal, com node instalado no computador:
-
+//Primeira vez no terminal, com node instalado no computador:
 npx create-react-app nomeProjeto
+
+//Para rodar o projeto pela primeira vez
+npm start 
+
+//Extensão para chrome
+React Developer Tools
+
+//Arquivo
+src/App.js
