@@ -6,7 +6,7 @@ import Comentario from './components/Comentario';
 function App() {
   return (
     <div className="App">
-      <h1>Teste</h1>
+      <h1>Comentários</h1>
       <Comentario/>
       <Comentario/>
     </div>

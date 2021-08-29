@@ -1,5 +1,6 @@
 .Classe{
-    background-color: green;
+    background-color:#072152;
     margin-bottom: 2rem;
-    border: 1px solid blue;
+    border: 1px solid #000;
+    color: #fff;
 }
