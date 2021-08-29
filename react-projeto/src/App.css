@@ -1,4 +1,41 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgb(255, 204, 204);
+}
+
 .App {
   text-align: center;
   padding: 0 3rem;
+}
+
+.formClass{
+  border-radius: .5rem;
+  box-shadow: 0 10px 15px -3px #000, 0 4px 6px -2px #000;
+}
+
+.formClass input, .formClass textarea{
+  border: 1px solid #000;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  margin: 1rem 0;
+  /*display: block;*/
+  border-radius: .3rem;
+  width: 90%;
+}
+
+.formClass button{
+  background-color: rgb(116, 116, 255);
+  color: aliceblue;
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  margin: 1rem;
+  border: none;
+}
+
+.formClass button:hover{
+  background-color:blue;
 }

@@ -69,7 +69,8 @@ class App extends Component{//class have function, function have return
           ))
         }
 
-        <form method="post" onSubmit={this.adicionarComentario}>
+        <form method="post" onSubmit={this.adicionarComentario} className="formClass">
+          <br/>
           <h2>Adicionar Comentário</h2>
           <div>
             <input
@@ -77,6 +78,7 @@ class App extends Component{//class have function, function have return
               name="nome"
               value={this.state.novoComentario.nome}
               onChange={this.editaInput}
+              required
               placeholder="Digite seu nome"
             />
           </div>
@@ -87,6 +89,7 @@ class App extends Component{//class have function, function have return
               name="email"
               value={this.state.novoComentario.email}
               onChange={this.editaInput}
+              required
               placeholder="Digite seu email"
             />
           </div>
@@ -96,6 +99,7 @@ class App extends Component{//class have function, function have return
               name="mensagem"
               value={this.state.novoComentario.mensagem}
               onChange={this.editaInput}
+              required
               rows="4"
             />
           </div>
