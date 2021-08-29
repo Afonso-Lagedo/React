@@ -30,35 +30,22 @@ class App extends Component{//class have function, function have return
   }
 
   adicionarComentario = evento =>{
-
-    evento.preventDefault();//for event annull
-
     console.log("Adicionando Comentário...");
 
-    //const novoComentario ={
-    //    nome:'Rafaela',
-    //    email:'rafaela@gmail.com',
-    //    data:new Date (),
-    //    mensagem:'Teste comentário3'
-    //}
-    //pick up from the state:
-
+    evento.preventDefault();//for event annull
     const novoComentario = {...this.state.novoComentario, data: new Date()};//pick up from state of novoComentario plus actualy date
-
     this.setState({comentarios: [...this.state.comentarios, novoComentario],
     novoComentario: {nome:'', email:'', mensagem:''}//update field, after add
     })
   }
 
-  editaInput = evento => {
-    //console.log(evento); //for start event
-    //console.log(evento.target);//who started the event
-    //console.log(evento.target.value);//what is being typed
+  removerComentario = comentario =>{
+    let lista = this.state.comentarios; //lista receives comentarios
+    lista = lista.filter(a => a !== comentario)// filter all who are not equals the comentario
+    this.setState({comentarios: lista})
+  }
 
-    //geting value and name
-    /*const value = evento.target.value;
-    const name = evento.target.name;
-    or ...*/
+  editaInput = evento => {
     const {name, value} = evento.target;
     //field update with value
     this.setState({novoComentario: {...this.state.novoComentario, [name]:value}});
@@ -71,10 +58,12 @@ class App extends Component{//class have function, function have return
         {
           this.state.comentarios.map((comentario, indice)=>(
             <Comentario
-              key={indice}//each components have identification unique 
+              key={indice}//each components have identification unique
               nome={comentario.nome}
               email={comentario.email}
-              data={comentario.data}>
+              data={comentario.data}
+              //bind to call the class function
+              onRemove={this.removerComentario.bind(this, comentario)}>
               {comentario.mensagem}
             </Comentario>
           ))
