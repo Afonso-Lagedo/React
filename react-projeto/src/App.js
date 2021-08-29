@@ -24,22 +24,28 @@ class App extends Component{//class have function, function have return
     ]
   }
 
+  adicionarComentario = () =>{
+    console.log("Adicionando Comentário...");
+
+    const novoComentario ={
+        nome:'Rafaela',
+        email:'rafaela@gmail.com',
+        data:new Date (),
+        mensagem:'Teste comentário3'
+    }
+
+    //let lista = this.state.comentarios;//geting comentarios
+    //lista.push(novoComentario);//add comentario
+    //this.setState({comentarios:lista})//state update
+
+    //or with sprad
+    this.setState({comentarios: [...this.state.comentarios, novoComentario]})
+  }
+
   render() {//from library Component
     return (
       <div className="App">
         <h1>Comentários</h1>
-        {
-        //get objects in state
-        /*
-          this.state.comentarios.map(comentario =>//map for passing in all elements
-            (console.log(comentario))
-          )*/
-          //or, for get position(indice)
-          /*this.state.comentarios.map((comentario, indice) =>//map for passing in all elements
-            (console.log(indice))
-          )*/
-        }
-
         {
           this.state.comentarios.map((comentario, indice)=>(
             <Comentario 
@@ -51,6 +57,7 @@ class App extends Component{//class have function, function have return
             </Comentario>
           ))
         }
+        <button onClick={this.adicionarComentario}>Adicionar comentário</button>
       </div>
     );
   }
