@@ -1,4 +1,7 @@
 import React from 'react';
+import {formatRelative} from 'date-fns'//to format date
+import {ptBR} from 'date-fns/locale';//to localization
+
 import './Comentario.css'
 import img from './user.png';
 
@@ -13,7 +16,7 @@ const Comentario = props => (//for get properties
             <h2 className="nome">{props.nome}</h2>
             <p className="email">{props.email}</p>
             <p className="mensagem">{props.children}</p>
-            <p className="data">{props.data.toString()}</p>
+            <p className="data">{formatRelative(props.data, new Date(), { locale:ptBR})}</p>
             <button onClick={props.onRemove}>&times;</button>
         </div>
         <br/><br/>

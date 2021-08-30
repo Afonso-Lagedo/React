@@ -9,3 +9,6 @@ React Developer Tools
 
 //Arquivo
 src/App.js
+
+//Instalar pacote (formato da data) no terminal
+npm install date-fns
